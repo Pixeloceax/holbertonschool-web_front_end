@@ -19,7 +19,7 @@
     --font-weight-bold: 700;
     --line-height-small:1.2;
     --line-height-base:1.5;
-    --line-height-large:1.8;
+    --line-height-big:1.8;
     --section-header-align: center;
     --section-tagline-transform: uppercase;
     --section-title-margin:0;
@@ -119,6 +119,6 @@ a:active {
 	margin-right: auto;
 }
 
-footer{
+.footer{
     padding: var(--footer-padding);
 }
