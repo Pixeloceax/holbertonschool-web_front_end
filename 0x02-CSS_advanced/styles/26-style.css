@@ -217,10 +217,10 @@ footer{
 	padding: 0.5rem;
 }
 
-[data-section-theme='dark'] {
+[data-section-theme="dark"] {
     --text-color: var(--color-white);
     --section-title-color: var(--color-white);
-    background-color: var(--color-black);
+    background: var(--color-black);
     --button-color : var(--color-white);
 }
 
