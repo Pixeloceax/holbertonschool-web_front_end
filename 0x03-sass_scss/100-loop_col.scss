@@ -1,0 +1,6 @@
+/* loop col */
+@for $C from 1 through 4 {
+    .col-#{$C} {
+        width: 100% / $C;
+    }
+}
