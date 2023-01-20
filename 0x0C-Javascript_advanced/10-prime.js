@@ -16,7 +16,7 @@ function countPrimeNumbers() {
 }
 
 let start = new Date().getTime();
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i <= 100; i++) {
   countPrimeNumbers();
 }
 let end = new Date().getTime();
