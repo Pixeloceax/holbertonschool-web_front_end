@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.slim.js"
+      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="utf-8" />
+    <title>Task 3</title>
+  </head>
+
+  <body>
+    <script type="application/javascript">
+      function createFamilyTree() {
+        var table = $("<table>");
+        var head = $("<thead>");
+        var headRow = $("<tr>");
+        var headFirstName = $("<th>").html("Firstname");
+        var headLastName = $("<th>").html("Lastname");
+
+        var body = $("<tbody>");
+        var row1 = $("<tr>");
+        var cell1a = $("<td>").html("Guillaume");
+        var cell1b = $("<td>").html("Salva");
+
+        var row2 = $("<tr>");
+        var cell2a = $("<td>").html("Paulette");
+        var cell2b = $("<td>").html("Salva");
+
+        var row3 = $("<tr>");
+        var cell3a = $("<td>").html("Antoine");
+        var cell3b = $("<td>").html("Salva");
+
+        $("body").append(
+          table,
+          head,
+          headRow,
+          headFirstName,
+          headLastName,
+          body,
+          row1,
+          cell1a,
+          cell1b,
+          row2,
+          cell2a,
+          cell2b,
+          row3,
+          cell3a,
+          cell3b
+        );
+      }
+      createFamilyTree();
+    </script>
+  </body>
+</html>
