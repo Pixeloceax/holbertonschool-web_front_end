@@ -17,54 +17,41 @@
 
   <body>
     <script type="application/javascript">
-      function createFamilyTree() {
-        var table = $("<table>");
-        var head = $("<thead>");
-        var headRow = $("<tr>");
-        var headFirstName = $("<th>").html("Firstname");
-        var headLastName = $("<th>").html("Lastname");
-
-        var body = $("<tbody>");
-        var row1 = $("<tr>");
-        var cell1a = $("<td>").html("Guillaume");
-        var cell1b = $("<td>").html("Salva");
-
-        var row2 = $("<tr>");
-        var cell2a = $("<td>").html("Paulette");
-        var cell2b = $("<td>").html("Salva");
-
-        var row3 = $("<tr>");
-        var cell3a = $("<td>").html("Antoine");
-        var cell3b = $("<td>").html("Salva");
-
-        $("body").append(
-          table,
-          head,
-          headRow,
-          headFirstName,
-          headLastName,
-          body,
-          row1,
-          cell1a,
-          cell1b,
-          row2,
-          cell2a,
-          cell2b,
-          row3,
-          cell3a,
-          cell3b
-        );
-      }
-      function replaceFamilyTree() {
-        var newRow = $("<tr>");
-        var cell1 = $("<td>").html("Gerard");
-        var cell2 = $("<td>").html("Bonissa");
-        newRow.append(cell1, cell2);
-        $("tbody").empty().append(newRow);
-      }
-
-      createFamilyTree();
-      replaceFamilyTree();
+      $().ready(function () {
+        $.createFamilyTree = function () {
+          $("body").append("<table></table>");
+          $("table").append("<tr> <th>Firstname</th> <th>Lastname</th> </tr>");
+          $("table").append("<tbody></tbody>");
+          $("tbody").append(
+            $("<tr></tr>").append(
+              $("<td></td>").text("Guillaume"),
+              $("<td></td>").text("Salva")
+            )
+          );
+          $("tbody").append(
+            $("<tr></tr>").append(
+              $("<td></td>").text("Paulette"),
+              $("<td></td>").text("Salva")
+            )
+          );
+          $("tbody").append(
+            $("<tr></tr>").append(
+              $("<td></td>").text("Antoine"),
+              $("<td></td>").text("Salva")
+            )
+          );
+        };
+        $.replaceFamilyTree = function () {
+          $("tbody").html(
+            $("<tr></tr>").append(
+              $("<td></td>").text("Gerard"),
+              $("<td></td>").text("Bonissa")
+            )
+          );
+        };
+        $.createFamilyTree();
+        $.replaceFamilyTree();
+      });
     </script>
   </body>
 </html>
