@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.slim.js"
+      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="utf-8" />
+    <title>Task 6</title>
+  </head>
+
+  <body>
+    <script>
+      function createFamilyTree() {
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const tbody = document.createElement("tbody");
+        thead.innerHTML = "<tr><th>Firstname</th><th>Lastname</th></tr>";
+        document.body.appendChild(table);
+        table.appendChild(thead);
+        table.appendChild(tbody);
+      }
+      function addNewMember(firstName, lastName, position) {
+        let new_table_1 = $("<tr></tr>");
+        let column_x = $("<td>(x)</td>");
+        column_x.css("background-color", "orange");
+        column_x.click(function () {
+          $(new_table_1).remove();
+        });
+        new_table_1.append(`<td>${firstName}</td>`);
+        new_table_1.append(`<td>${lastName}</td>`);
+        new_table_1.append(column_x);
+        if (position == "before") {
+          $("tbody").prepend(new_table_1);
+        } else {
+          $("tbody").append(new_table_1);
+        }
+      }
+      function createForm() {
+        const input1 = document.createElement("input");
+        const input2 = document.createElement("input");
+        const select = document.createElement("select");
+        const button = document.createElement("button");
+        input1.setAttribute("type", "text");
+        input1.setAttribute("id", "input1");
+        input2.setAttribute("type", "text");
+        input2.setAttribute("id", "input2");
+        select.innerHTML =
+          "<option value='before'>Before</option><option value='after'>After</option>";
+        button.setAttribute("id", "button");
+        button.innerHTML = "Submit";
+        document.body.appendChild(input1);
+        document.body.appendChild(input2);
+        document.body.appendChild(select);
+        document.body.appendChild(button);
+        $("#button").click(function () {
+          let input1 = $("#input1").val();
+          let input2 = $("#input2").val();
+          let input_1 = input1;
+          let input_2 = input2;
+          addNewMember(input_1, input_2, select.value);
+        });
+      }
+      createFamilyTree();
+      createForm();
+    </script>
+  </body>
+</html>
